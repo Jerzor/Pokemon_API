@@ -32,19 +32,26 @@
     outline: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 750px) {
+    .navContainer{
+        flex-direction: column;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 500px) {
     .navTitle{
         font-size: 18px;
-        text-align: center;
     }
 
     .navInput{
-        padding: 5px 10px;
+        padding: 10px;
         width: 80%;
+        display: block;
+        margin: 0 auto;
     }
 
     .navSearch svg{
-        right: 20%;
-        font-size: 18px;
+        right: 10%;
     }
 }
