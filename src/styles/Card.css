@@ -1,0 +1,22 @@
+.cardContainer{
+    padding: 10px;
+    margin: 30px 0;
+    box-shadow: 5px 5px 10px #ccc;
+    transition: 0.3s ease-out;
+}
+
+.cardContainer:hover{
+    transform: scale(1.05);
+}
+
+.cardName{
+    text-align: center;
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.cardImg{
+    max-width: 300px;
+    cursor: pointer;
+}
