@@ -21,7 +21,6 @@ function App() {
     axios
       .get(ENDPOINT)
       .then((response) => {
-        console.log(response.data.cards);
         setPokemons(response.data.cards);
       })
       .catch((error) => console.log(error));
@@ -31,13 +30,23 @@ function App() {
     fetchData();
   }, []);
 
+  const filteredPokemons = pokemons.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(inputValue.toLowerCase())
+  );
+
+  console.log(pokemons);
+
   return (
     <>
       <Navbar inputValue={inputValue} handleOnChange={handleOnChange} />
       <div className="cardsContainer">
-        {pokemons.map((pokemon) => (
-          <Card key={pokemon.id} pokemon={pokemon} />
-        ))}
+        {filteredPokemons.length ? (
+          filteredPokemons.map((pokemon) => (
+            <Card key={pokemon.id} pokemon={pokemon} />
+          ))
+        ) : (
+          <h1>Loading. . .</h1>
+        )}
       </div>
     </>
   );
