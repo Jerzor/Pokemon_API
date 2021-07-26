@@ -1,17 +1,17 @@
 .cardContainer{
     padding: 10px;
     margin: 30px 0;
-    box-shadow: 5px 5px 10px #ccc;
     transition: 0.3s ease-out;
 }
 
-.cardContainer:hover{
-    transform: scale(1.05);
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
 }
 
 .cardName{
     text-align: center;
-    font-weight: normal;
     font-size: 20px;
     margin-bottom: 10px;
 }
@@ -21,6 +21,16 @@
     cursor: pointer;
 }
 
+.cardFooter{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 18px;
+}
+
+span{
+    font-weight: bold;
+}
 
 @media screen and (max-width: 500px) {
     .cardContainer{
