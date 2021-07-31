@@ -34,19 +34,19 @@ function App() {
     pokemon.name.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-  console.log(pokemons);
+  const loadPokemons = () => {
+    if (filteredPokemons.length)
+      return filteredPokemons.map((pokemon) => (
+        <Card key={pokemon.id} pokemon={pokemon} />
+      ));
+    else return <h1>There is no such pokemon.</h1>;
+  };
 
   return (
     <>
       <Navbar inputValue={inputValue} handleOnChange={handleOnChange} />
       <div className="cardsContainer">
-        {filteredPokemons.length ? (
-          filteredPokemons.map((pokemon) => (
-            <Card key={pokemon.id} pokemon={pokemon} />
-          ))
-        ) : (
-          <h1>Loading. . .</h1>
-        )}
+        {pokemons.length ? loadPokemons() : <h1>Loading. . .</h1>}
       </div>
     </>
   );
