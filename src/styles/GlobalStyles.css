@@ -14,6 +14,13 @@
     justify-items: center;
 }
 
+.cardsContainer h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @media screen and (max-width: 1000px){
     .cardsContainer{
         grid-template-columns: repeat(2, 1fr);
