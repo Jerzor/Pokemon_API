@@ -34,7 +34,7 @@ function App() {
     pokemon.name.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-  const loadPokemons = () => {
+  const loadFilteredPokemons = () => {
     if (filteredPokemons.length)
       return filteredPokemons.map((pokemon) => (
         <Card key={pokemon.id} pokemon={pokemon} />
@@ -46,7 +46,7 @@ function App() {
     <>
       <Navbar inputValue={inputValue} handleOnChange={handleOnChange} />
       <div className="cardsContainer">
-        {pokemons.length ? loadPokemons() : <h1>Loading. . .</h1>}
+        {pokemons.length ? loadFilteredPokemons() : <h1>Loading. . .</h1>}
       </div>
     </>
   );
